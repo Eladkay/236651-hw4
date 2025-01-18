@@ -7,6 +7,7 @@ package il.ac.technion.cs.matrices.matrix;
  * The matrix is 0-indexed and its entries are
  * stored in a row-major order.
  * Objects of this class are expected to be immutable.
+ *
  * @author kinsbruner
  * @version 1.0
  */
@@ -18,7 +19,8 @@ public final class ConcreteMatrix implements IMatrix<Double> {
     /**
      * Constructs a new matrix with the given dimensions
      * and initializes all entries to zero.
-     * @param rows The number of rows
+     *
+     * @param rows    The number of rows
      * @param columns The number of columns
      * @throws IllegalArgumentException If the number of rows or columns is non-positive
      */
@@ -37,6 +39,7 @@ public final class ConcreteMatrix implements IMatrix<Double> {
     /**
      * Constructs a new matrix with the given entries.
      * Note that this operation <b>copies the given matrix</b>.
+     *
      * @param data The entries of the matrix
      * @throws IllegalArgumentException If the matrix is empty or not rectangular
      */
@@ -64,6 +67,7 @@ public final class ConcreteMatrix implements IMatrix<Double> {
 
     /**
      * Constructs an identity matrix of the given size.
+     *
      * @param size The size of the matrix
      * @return The new identity matrix
      * @throws IllegalArgumentException If the size is non-positive
@@ -81,7 +85,8 @@ public final class ConcreteMatrix implements IMatrix<Double> {
 
     /**
      * Constructs a matrix of the given size with all entries set to zero.
-     * @param rows The number of rows
+     *
+     * @param rows    The number of rows
      * @param columns The number of columns
      * @return The new zero matrix
      * @throws IllegalArgumentException If the number of rows or columns is non-positive
@@ -256,6 +261,7 @@ public final class ConcreteMatrix implements IMatrix<Double> {
 
     /**
      * Inverts a copy of this matrix.
+     *
      * @return The inverse of the matrix
      * @throws IllegalArgumentException If the matrix is not square or if it is non-invertible
      */

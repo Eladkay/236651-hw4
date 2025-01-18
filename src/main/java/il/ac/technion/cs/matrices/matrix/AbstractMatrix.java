@@ -124,9 +124,10 @@ public final class AbstractMatrix implements IMatrix<Term> {
 
     /**
      * Constructs a new matrix with the given dimensions and fresh variable entries.
-     * @param rows The number of rows
+     *
+     * @param rows    The number of rows
      * @param columns The number of columns
-     * @param tag A tag to add to the variable names
+     * @param tag     A tag to add to the variable names
      * @return The new matrix
      */
     public static AbstractMatrix fresh(int rows, int columns, String tag) {
@@ -141,6 +142,7 @@ public final class AbstractMatrix implements IMatrix<Term> {
 
     /**
      * Constructs a new matrix with fresh variable entries with the same dimensions as this matrix
+     *
      * @param tag A tag to add to the variable names
      * @return The new matrix
      */

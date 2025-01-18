@@ -14,6 +14,7 @@ public class VariableNode<T> implements AstNode<T> {
 
     /**
      * Creates a new variable node.
+     *
      * @param index The index of the variable
      */
     public VariableNode(int index) {
@@ -23,7 +24,7 @@ public class VariableNode<T> implements AstNode<T> {
     @SafeVarargs
     @Override
     public final T evaluate(Object... variables) {
-        return (T)variables[index];
+        return (T) variables[index];
     }
 
     @Override

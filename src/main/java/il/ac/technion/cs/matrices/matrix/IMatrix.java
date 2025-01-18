@@ -3,18 +3,24 @@ package il.ac.technion.cs.matrices.matrix;
 /**
  * An interface for a matrix of elements of type T.
  * The matrix is immutable, and all operations return new matrices.
+ *
  * @param <T> The type of the entries of the matrix
  */
 public interface IMatrix<T> {
 
-    /** @return the number of rows of the matrix */
+    /**
+     * @return the number of rows of the matrix
+     */
     int getRows();
 
-    /** @return the number of columns of the matrix */
+    /**
+     * @return the number of columns of the matrix
+     */
     int getColumns();
 
     /**
      * Returns the entry at the given row and column.
+     *
      * @param row The row index
      * @param col The column index
      * @return The entry at the given row and column
@@ -26,8 +32,9 @@ public interface IMatrix<T> {
      * Returns a copy of this matrix which is identical for all
      * entries except for the entry at the given row and column,
      * which is set to the given value.
-     * @param row The row index
-     * @param col The column index
+     *
+     * @param row   The row index
+     * @param col   The column index
      * @param value The new value of the entry
      * @return The new matrix
      * @throws IndexOutOfBoundsException If the row or column index is out of bounds
@@ -36,6 +43,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns a copy of this matrix with the given row removed.
+     *
      * @param row The row index
      * @return The new matrix
      * @throws IndexOutOfBoundsException If the row index is out of bounds
@@ -44,6 +52,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns a copy of this matrix with the given column removed.
+     *
      * @param col The column index
      * @return The new matrix
      * @throws IndexOutOfBoundsException If the column index is out of bounds
@@ -52,12 +61,14 @@ public interface IMatrix<T> {
 
     /**
      * Returns a copy of this matrix that is transposed.
+     *
      * @return The new matrix
      */
     IMatrix<T> transpose();
 
     /**
      * Returns the product of this matrix (left) and the given matrix (right).
+     *
      * @param other The other matrix
      * @return The product of the two matrices
      * @throws IllegalArgumentException If the number of columns of the first matrix is not equal to the number of rows of the second matrix
@@ -66,6 +77,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns the product of this matrix and the given scalar.
+     *
      * @param scalar The scalar
      * @return The product of the matrix and the scalar
      */
@@ -73,6 +85,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns the sum of this matrix and the given matrix.
+     *
      * @param other The other matrix
      * @return The sum of the two matrices
      * @throws IllegalArgumentException If the matrices do not have the same dimensions
@@ -81,12 +94,14 @@ public interface IMatrix<T> {
 
     /**
      * Returns a negated copy of this matrix.
+     *
      * @return The negation of the matrix
      */
     IMatrix<T> negate();
 
     /**
      * Returns the difference of this matrix (left) and the given matrix (right).
+     *
      * @param other The other matrix
      * @return The difference of the two matrices
      * @throws IllegalArgumentException If the matrices do not have the same dimensions
@@ -97,6 +112,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns a new matrix that is the identity matrix of the same size.
+     *
      * @return The identity matrix
      * @throws UnsupportedOperationException If the matrix is not square
      */
@@ -104,6 +120,7 @@ public interface IMatrix<T> {
 
     /**
      * Returns a new matrix that is the zero matrix of the same size.
+     *
      * @return The zero matrix
      */
     IMatrix<T> zerosLike();
@@ -111,6 +128,7 @@ public interface IMatrix<T> {
     /**
      * Returns a copy of this matrix, raised to the given exponent.
      * If the exponent is zero, the identity matrix is returned.
+     *
      * @param exponent The exponent
      * @return The new matrix
      * @throws IllegalArgumentException If the matrix is not square or the exponent is negative
@@ -135,6 +153,7 @@ public interface IMatrix<T> {
     /**
      * Returns a copy of this matrix, resized to the given dimensions.
      * The number of entries must remain the same.
+     *
      * @param rows The new number of rows
      * @param cols The new number of columns
      * @return The new matrix

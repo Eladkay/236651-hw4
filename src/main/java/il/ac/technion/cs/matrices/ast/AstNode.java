@@ -9,12 +9,13 @@ package il.ac.technion.cs.matrices.ast;
 public interface AstNode<T> {
     /**
      * Evaluates the program on the given input matrices.
+     *
      * @param variables The input matrices. Note that the indexing is global:
      *                  variables are never re-indexed, so even deep in the tree, index zero
      *                  still refers to the same variable.
      *                  It is assumed that this parameter is <emph>never empty</emph>.
+     * @param <T>       The entry type of the matrices
      * @return The output matrix
-     * @param <T> The entry type of the matrices
      */
     T evaluate(Object... variables);
 }

@@ -17,6 +17,7 @@ public class ClassConstantNode<T> implements AstNode<T> {
     public interface ClassValue<T> {
         /**
          * Returns the value represented by this node, given the class used.
+         *
          * @param clazz The class used
          * @return The value represented by this node
          * @throws Exception This method probably uses reflection, so it can throw many different exceptions.
@@ -34,8 +35,9 @@ public class ClassConstantNode<T> implements AstNode<T> {
      * At runtime, it would be resolved to <code>ConcreteMatrix.identity(3)</code>,
      * <code>AbstractMatrix.identity(3)</code>, etc.
      * <p>
+     *
      * @param methodName The name of the method to call
-     * @param args The arguments to pass to the method (optional)
+     * @param args       The arguments to pass to the method (optional)
      * @return A <code>ClassValue</code> that represents the method call
      */
     public static <T> ClassValue<T> getStaticMethodValue(String methodName, Object... args) {
@@ -48,10 +50,13 @@ public class ClassConstantNode<T> implements AstNode<T> {
         }
         return clazz -> (T) clazz.getMethod(methodName, argTypes).invoke(null, args);
     }
+
     private final ClassValue<T> value;
+
     public ClassConstantNode(ClassValue<T> value) {
         this.value = value;
     }
+
     @SafeVarargs
     @Override
     public final T evaluate(Object... variables) {

@@ -8,6 +8,7 @@ public class CannotSynthesizeException extends RuntimeException {
 
     /**
      * Constructs a new instance of the exception with the given message.
+     *
      * @param message The message
      */
     public CannotSynthesizeException(String message) {
