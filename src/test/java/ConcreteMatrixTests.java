@@ -39,7 +39,7 @@ public class ConcreteMatrixTests {
         double[][] array = {{1, 2}, {3, 4}};
         ConcreteMatrix matrix = new ConcreteMatrix(array);
         array[0][0] = 0;
-        assert matrix.get(0, 1) == 2;
+        assert matrix.get(0, 0) == 1;
     }
 
     @Test
