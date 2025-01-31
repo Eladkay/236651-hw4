@@ -51,13 +51,13 @@ public class SynthesizerTests {
         AstNode<? extends IMatrix<?>> result3 = synthesizer.synthesize(examples3);
         assert result3.evaluate(mat3, mat4).equals(mat3.multiply(mat4));
 
-        // example 4 - depth 2: synthesizes Call("add", Call("add", Variable(0), Variable(1)), Variable(2)) or
-        //                      Call("multiply", Variable(0), Constant(3)) if you can get a 3
+        // example 4 - depth 2: synthesizes Call("add", Call("add", Variable(0), Variable(0)), Variable(0)) or
+        //                      Call("multiply", Variable(0), Constant(3)) if you can get a 3 or many other options
         Map<List<IMatrix<Double>>, IMatrix<Double>> examples4 = Map.of(
                 List.of(mat1, mat1, mat1), mat1.multiply(3.0) // not all distinct
         );
         AstNode<? extends IMatrix<?>> result4 = synthesizer.synthesize(examples4);
-        assert result4.evaluate(mat1, mat2, mat3).equals(mat1.add(mat2).add(mat3));
+        assert result4.evaluate(mat1, mat1, mat1).equals(mat1.add(mat1).add(mat1));
     }
 
     @Test
